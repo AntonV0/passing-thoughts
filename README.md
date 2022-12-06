@@ -4,8 +4,10 @@
 ## Project Outline
 This ReactJS web app is a place to store your passing thoughts. Your thought disappears 15 seconds after it's added, and it can also be deleted before the timer expires.
 ## What I Learned
-  - Applying useState() hooks (instead of using classes)
   - Function components with syntax similar to stateless components
+  - Using hooks instead of class components
+  - The useState hook to allow functional components to have state
+  - The useEffect hook to allow functional components to have lifecycle methods within a single API
   - Using event.preventDefault() to stop the browser from refreshing the page
   - The setTimeout() method that executes its asynchronous function after a set time
   - Returning cleanup functions (to clear effects after they are no longer needed) to prevent unwanted behaviours such as memory leaks
