@@ -17,16 +17,34 @@ export function App() {
     },
   ]);
 
+  const addThought = (thought) => {
+    setThoughts((thoughts) => [thought, ...thoughts]);
+    // same as:
+    // setThoughts(prev => [thought, ...prev])
+  };
+
+  const removeThought = (thoughtIdToRemove) => {
+    setThoughts((thoughts) => 
+      thoughts.filter((thought) => thought.id !== thoughtIdToRemove)
+    );
+    // same as:
+    // setThoughts(prev => prev.filter(thought => (thought.id !== thoughtIdToRemove)));
+  };
+
   return (
     <div className="App">
       <header>
         <h1>Passing Thoughts</h1>
       </header>
       <main>
-        <AddThoughtForm />
+        <AddThoughtForm addThought={addThought} />
         <ul className="thoughts">
           {thoughts.map((thought) => (
-            <Thought key={thought.id} thought={thought} />
+            <Thought 
+              key={thought.id} 
+              thought={thought}
+              removeThought={removeThought} 
+            />
           ))}
         </ul>
       </main>
